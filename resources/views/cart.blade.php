@@ -1,1 +1,3 @@
-<h1>Panier</h1>
+@extends('layouts/layout')
+
+
