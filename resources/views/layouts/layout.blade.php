@@ -5,159 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url('css/main.css')}}">
+    <script src="{{url('js/main.js')}}"></script>
     <title>HerosMarket</title>
 </head>
 
 
 <body>
-<nav class="navbar navbar-expand-lg  bg-dark col-12">
-    <div class=" col-3 ">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link active text-white" aria-current="page" href="#">Shop</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">Bon plan</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
-                   aria-expanded="false">
-                    Catégorie
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Livre</a></li>
-                    <li><a class="dropdown-item" href="#">Filme</a></li>
-                    <li><a class="dropdown-item" href="#">Edition Collector</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Produits Dérivés</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled text-white">Disabled</a>
-            </li>
-        </ul>
+<div class="header">
+    <div class="inner-header flex">
+        <svg version="1.1" class="logo" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xml:space="preserve">
+        <path fill="#FFFFFF" stroke="#000000" stroke-width="10" stroke-miterlimit="10" d="M57,283"/>
+            <g>
+                <img src="images/HerosMarkets.png">
+            </g>
+        </svg>
     </div>
-    <div class=" col-6 d-flex justify-content-center ">
-        <img src="img/HerosMarkets.png" width="400" height="200" class="img-fluid">
+    <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+             viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7"/>
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"/>
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"/>
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff"/>
+            </g>
+        </svg>
     </div>
-    <div class=" col-3 d-flex justify-content-center">
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light text-white" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
+</div>
+
+<div class="content flex">
+    <nav>
+        <a href="#">Accueil</a>
+        <a href="#">Livres</a>
+        <a href="#">Filmes</a>
+        <a href="#">Panier</a>
+        <div id="indicator"></div>
+    </nav>
+</div>
+
 
 @yield('content')
 
-<div class="container-fluid my-5 bg-dark">
-    <footer
-        class="text-center text-lg-start text-white bg-dark"
-        style="background-color: #1c2331">
-        <section class="d-flex justify-content-between p-4 bg-dark">
-            <div>
-                <a href="" class="text-white me-4">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="" class="text-white me-4">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="" class="text-white me-4">
-                    <i class="fab fa-google"></i>
-                </a>
-                <a href="" class="text-white me-4">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="" class="text-white me-4">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="" class="text-white me-4">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
 
-        </section>
-        <section class="">
-            <div class="container text-center text-md-start mt-5 bg-dark">
-                <!-- Grid row -->
-                <div class="row mt-3">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold">HerosMarkets</h6>
-                        <hr
-                            class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                        <p>
-                            Here you can use rows and columns to organize your footer
-                            content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit.
-                        </p>
-                    </div>
-
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <h6 class="text-uppercase fw-bold">Products</h6>
-                        <hr
-                            class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                        <p>
-                            <a href="#" class="text-white">Shop</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-white">BonPlan</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-white">Catégorie</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-white">BDisabled</a>
-                        </p>
-                    </div>
-
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold">Useful links</h6>
-                        <hr
-                            class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                        <p>
-                            <a href="#" class="text-white">Your Account</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-white">Become an Affiliate</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-white">Shipping Rates</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-white">Help</a>
-                        </p>
-                    </div>
-
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-                        <h6 class="text-uppercase fw-bold">Contact</h6>
-                        <hr
-                            class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                        <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                        <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <div
-            class="text-center p-3"
-            style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2020 Copyright:
-            <a class="text-white" href="https://www.linkedin.com/in/c%C3%A9dric-atzori-686119229/">HerosMarkets</a>
-        </div>
-    </footer>
-</div>
 </body>
 </html>

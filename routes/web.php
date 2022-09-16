@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,13 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/cart', CartController::class );
+Route::get('/cart', CartController::class);
 
-Route::get('/product', [ProductController::class , 'listeProduits']);
+Route::get('/product', [ProductController::class, 'listeProduits']);
 
-Route::get('/product/{id}', [ProductController::class , 'ficheduProduit']);
+Route::get('/product/{id}', [ProductController::class, 'ficheduProduit']);
 
 
 
