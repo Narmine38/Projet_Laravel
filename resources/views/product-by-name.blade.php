@@ -2,6 +2,8 @@
 
 @section('content')
 
+    @foreach ($products as $product)
+
         <div class="wrapper">
             <div class="product-img">
                 <img src="{{$product->image}}" height="420" width="327">
@@ -14,9 +16,10 @@
                 </div>
                 <div class="product-price-btn">
                     <p><span>{{$product->price}}</p>
-                    <button type="submit">Ajouter au panier</button>
                 </div>
             </div>
         </div>
+
+    @endforeach
 
 @endsection
