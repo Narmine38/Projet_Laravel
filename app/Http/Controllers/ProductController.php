@@ -17,15 +17,13 @@ class ProductController extends Controller
     public function ficheduProduit($id)
     {
         $product = DB::select('SELECT * FROM `products` where id = ' . $id);
-
-        return view('product-details', ['product' => $product[0]]);
+        return view('product-details', ['product' => $product[0], 'id' => $id]);
 
     }
 
     public function byName()
     {
         $products = Product::orderBy('name')->get();
-//        dd($products);
         return view('product-by-name', ['products' => $products]);
 
     }
@@ -39,7 +37,13 @@ class ProductController extends Controller
     public function byPriceName($id)
     {
         $product = Product::find($id);
-//        dd($product);
         return view('product-name-price', ['product' => $product]);
+
+
+    }
+
+    public function page404()
+    {
+        return view('404');
     }
 }
