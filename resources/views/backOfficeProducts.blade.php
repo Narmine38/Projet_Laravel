@@ -20,13 +20,11 @@
                     <p><span>{{$product->price}}</p>
                 </div>
                 <a class="btn btn-primary" href="/backoffice/products/edite/{{$product->id}}" role="button">Modifier</a>
-
                 <form method="post" action="/backoffice/{{$product->id}}/delete">
                     @method('delete')
                     @csrf
                     <button class="btn btn-primary" type="submit">Button</button>
                 </form>
-
             </div>
         </div>
 

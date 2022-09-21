@@ -7,7 +7,7 @@
             <h2 class="panel-title">Modifier un produit</h2>
         </div>
         <div class="panel-body">
-            <form class="" action="/backoffice/{{$product->id}}" method="post">
+            <form  action="/backoffice/{{$product->id}}" method="post">
                 @method('put')
                 @csrf
                 <div class="form-group">
