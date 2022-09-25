@@ -8,42 +8,20 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function listeProduits()
+    public function index()
     {
-        $products = DB::select('SELECT * FROM `products`');
+        $products = Product::all();
         return view('product-list', ['products' => $products]);
     }
 
-    public function ficheduProduit($id)
-    {
-        $product = DB::select('SELECT * FROM `products` where id = ' . $id);
-        return view('product-details', ['product' => $product[0], 'id' => $id]);
-
-    }
-
-    public function byName()
-    {
-        $products = Product::orderBy('name')->get();
-        return view('product-by-name', ['products' => $products]);
-
-    }
-
-    public function byPrice()
-    {
-        $products = Product::orderBy('price', 'desc')->get();
-        return view('product-by-price', ['products' => $products]);
-    }
-
-    public function byPriceName($id)
+    public function show($id): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         $product = Product::find($id);
-        return view('product-name-price', ['product' => $product]);
-
+        return view('product-details', ['product' => $product]);
 
     }
 
-    public function page404()
-    {
-        return view('404');
-    }
+
+
+
 }

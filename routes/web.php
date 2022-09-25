@@ -1,11 +1,13 @@
 <?php
 
-use App\Http\Controllers\BackController;
+use App\Http\Controllers\backoffice\BackProductController;
+use App\Http\Controllers\backoffice\CategoryController;
+use App\Http\Controllers\backoffice\Order_productController;
+use App\Http\Controllers\backoffice\OrderController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
-use App\Models\Product;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,27 +21,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'home']);
-Route::get('/cart', [CartController::class, 'index']);
-Route::get('/product', [ProductController::class, 'listeProduits']);
-Route::get('/product/{id}', [ProductController::class, 'ficheduProduit']);
+Route::get('/', [HomeController::class, 'index']);
+Route::post('/cart', [CartController::class, 'index']);
+Route::get('/product', [ProductController::class, 'index' , "formatPrice"]);
+Route::get('/product/{id}', [ProductController::class, 'show']);
 ////////////////////////////////////////////////////////////////
-Route::get('/byName', [ProductController::class, 'byName']);
-Route::get('/byPrice', [ProductController::class, 'byPrice']);
-Route::get('/byPriceName/{id}', [ProductController::class, 'byPriceName']);
+Route::get('/backoffice', [BackProductController::class, 'index']);
 //////////////////////////////////////////
-Route::get('/backoffice', [BackController::class, 'index']);
-
-Route::get('/backoffice/products', [BackController::class, 'products']);
-
-Route::get('/backoffice/products/add', [BackController::class, 'create']);
-Route::post('/backoffice', [BackController::class, 'store']);
-
-Route::delete('/backoffice/{id}/delete', [BackController::class, 'delete']);
-
-Route::get('/backoffice/products/edite/{id}', [BackController::class, 'edite']);
-Route::put('/backoffice/{id}', [BackController::class, 'update']);
-
+Route::get('/backoffice/products', [BackProductController::class, 'index']);
+Route::get('/backoffice/products/add', [BackProductController::class, 'create']);
+Route::post('/backoffice', [BackProductController::class, 'store']);
+//////////////////////////////////////////////////
+Route::delete('/backoffice/{id}/delete', [BackProductController::class, 'destroy']);
+////////////////////////////////
+Route::get('/backoffice/products/edite/{id}', [BackProductController::class, 'edite']);
+Route::put('/backoffice/{id}', [BackProductController::class, 'update']);
+////////////////////////////////////////////////
+Route::get('/backoffice/orders' , [OrderController::class, 'index']);
+Route::get('/backoffice/category' , [CategoryController::class, 'index']);
+Route::get('/backoffice/customer' , [CustomerController::class, 'index']);
+//////////////////////////////////
+Route::get('/backoffice/ordersProduct' , [Order_productController::class, 'index']);
 
 
 

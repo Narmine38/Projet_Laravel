@@ -40,10 +40,10 @@
 
 <div class="content flex">
     <nav>
-        <a href="#">Accueil</a>
-        <a href="#">Livres</a>
-        <a href="#">Filmes</a>
-        <a href="#">Panier</a>
+        <a href="{{'/'}}">Accueil</a>
+        <a href="{{'/product'}}">Livres</a>
+        <a href="{{'/product'}}">Filmes</a>
+        <a href="{{'/cart'}}">Panier</a>
         <div id="indicator"></div>
     </nav>
 </div>
