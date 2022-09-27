@@ -7,9 +7,13 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
-        $categorys = Category::ALL();
-        return view('.backoffice.category.backOfficeCategory', ['categorys' => $categorys]);
+        $categories = Category::with('products')->get();
+        return view('.backoffice.category.backOfficeCategory', ['categories' => $categories]);
     }
+
+
 }
+

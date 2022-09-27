@@ -9,6 +9,8 @@ class OrderProduct extends Model
 {
     use HasFactory;
     use HasFactory;
+    public $timestamps = false;
+
     protected $table = "order_product";
 
     public function product()

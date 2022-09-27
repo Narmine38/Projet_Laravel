@@ -6,6 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="{{url('css/main.css')}}">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script src="{{url('js/main.js')}}"></script>
     <title>HerosMarket</title>
 </head>
@@ -40,10 +41,10 @@
 
 <div class="content flex">
     <nav>
-        <a href="{{'/'}}">Accueil</a>
-        <a href="{{'/product'}}">Livres</a>
-        <a href="{{'/product'}}">Filmes</a>
-        <a href="{{'/cart'}}">Panier</a>
+        <a class="fs-1" href="{{'/'}}">Accueil</a>
+        <a class="fs-1" href="{{'/product'}}">Livres</a>
+        <a class="fs-1" href="{{'/product'}}">Filmes</a>
+        <a class="fs-1" href="{{'/cart'}}">Panier</a>
         <div id="indicator"></div>
     </nav>
 </div>

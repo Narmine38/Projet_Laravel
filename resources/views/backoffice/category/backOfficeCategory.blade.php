@@ -2,12 +2,12 @@
 
 @section('content')
 
-    @foreach($categorys as $category)
+    @foreach($categories as $category)
         <h2>{{$category->name}}</h2>
-        @foreach($category->product as $product)
-            <div class="wrapper">
+        @foreach($category->products as $product)
+            <div class="wrapper ">
                 <div class="product-img">
-                    <img src="{{$product->image}}" height="420" width="327">
+                    <img src="{{$product->image}}" height="566" width="327">
                 </div>
                 <div class="product-info">
                     <div class="product-text">
@@ -16,8 +16,7 @@
                         <p>{{$product->description}}</p>
                     </div>
                     <div class="product-price-btn">
-                        <p><span>{{$product->price}}</p>
-                        <button type="submit">Ajouter au panier</button>
+                        <p>{{number_format($product->price,2,",",".") . '€'}}</p>
                     </div>
                 </div>
             </div>

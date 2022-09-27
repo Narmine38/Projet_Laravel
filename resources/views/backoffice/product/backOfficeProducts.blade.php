@@ -20,7 +20,7 @@
 
         <div class="wrapper">
             <div class="product-img">
-                <img src="{{$product->image}}" height="420" width="327">
+                <img src="{{$product->image}}" height="566" width="327">
             </div>
             <div class="product-info">
                 <div class="product-text">
@@ -28,8 +28,8 @@
                     <h2>by studio and friends</h2>
                     <p>{{$product->description}}</p>
                 </div>
-                <div class="product-price-btn">
-                    <p><span>{{$product->price}}</p>
+                <div class="product-price-btn d-flex flex-column">
+                    <p>{{number_format($product->price,2,",",".") . '€'}}</p>
                 </div>
                 <div class="d-flex flex-row">
                     <a class="btn btn-primary" href="/backoffice/products/edite/{{$product->id}}"

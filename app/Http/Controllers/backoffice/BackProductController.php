@@ -30,16 +30,8 @@ class BackProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'article' => 'required',
-//            'description' => 'required',
+            'article' => 'bail|required',
             'prix' => 'required|numeric|gt:0',
-//            'image' => 'required',
-//            'promotion' => 'required',
-//            'Stock' => 'required',
-//            'poids' => 'required',
-//            'categories' => 'required',
-//            'author' => 'required',
-//            'collection' => 'required',
         ]);
 //        dd($request->all());
         $product = new Product();
