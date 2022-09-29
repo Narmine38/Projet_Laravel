@@ -230,7 +230,7 @@
             </div>
         </div>
     </div>
-    <section class="section dark-translucent-bg" style="background-image:url('img/shop-banner20.jpg');background-position: 50% 46%;">
+    <section class="section dark-translucent-bg" style="background-image:url();background-position: 50% 46%;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
